@@ -68,6 +68,7 @@
                 required
                 id="bitcoinAdress"
                 v-model="receiver.bitcoinAdress"
+                placeholder="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
               ></b-form-input>
             </b-form-group>
           </div>
