@@ -43,7 +43,7 @@
               ></b-form-input>
             </b-form-group>
           </div>
-          <div v-else>
+          <div v-else-if="receiver.payMethod == 'Paypal'">
             <b-form-group
               id="paypal-group"
               label="Paypal Konto"
@@ -54,8 +54,25 @@
                 required
                 id="paypal"
                 placeholder="Jonathan@paypal.com"
+                v-model="receiver.paypalEmail"
               ></b-form-input>
             </b-form-group>
+          </div>
+          <div v-else-if="receiver.payMethod == 'Bitcoin'">
+            <b-form-group
+              id="bitcoin-group"
+              label="Bitcoin Adress"
+              label-for="bitcoinAdress"
+            >
+              <b-form-input
+                required
+                id="bitcoinAdress"
+                v-model="receiver.bitcoinAdress"
+              ></b-form-input>
+            </b-form-group>
+          </div>
+          <div v-else-if="receiver.payMethod == 'Faktura'">
+            <p>Fakturan skickas till din adress</p>
           </div>
         </b-form>
       </b-col>
@@ -80,6 +97,7 @@
               id="lastname"
               placeholder="Luxman"
               v-model="receiver.lastname"
+              required
             ></b-form-input>
           </b-form-group>
           <b-form-group
@@ -91,6 +109,7 @@
               id="street"
               placeholder="Kungstorget 23"
               v-model="receiver.street"
+              required
             ></b-form-input>
           </b-form-group>
           <b-form-group
@@ -160,7 +179,10 @@ export default {
         telephone: "",
         email: "",
         payMethod: "",
-        cardNumber: ""
+        cardNumber: "",
+        cardNumberName: "",
+        paypalEmail: "",
+        bitcoinAdress: ""
       },
       payMethodOptions: ["Visa", "Paypal", "Bitcoin", "Faktura"]
     };
