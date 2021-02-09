@@ -1,4 +1,4 @@
-# my-project
+# webshop
 
 ## Project setup
 ```

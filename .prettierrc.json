@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "semi": false,
+=======
+  "semi" :false,
+>>>>>>> 7583d57ed62494bf013dcd10564afaff51d1af76
   "singleQuote": true,
   "trailingComma": "none",
   "vueIndentScriptAndStyle": true
