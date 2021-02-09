@@ -5,13 +5,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import Cart from "@/components/Cart.vue";
+  // @ is an alias to /src
+  import Cart from '@/components/Cart.vue'
 
-export default {
-  name: "Home",
-  components: {
-    Cart
+  export default {
+    name: 'Home',
+    components: {
+      Cart
+    }
   }
-};
 </script>

@@ -79,7 +79,7 @@
       </b-col>
       <b-col>
         <h2>Kontakt uppgifter</h2>
-        <b-form @submit.prevent="Onsubmit">
+        <b-form @submit.prevent="onSubmit">
           <b-form-group id="surname-group" label-for="surname" label="Förnamn">
             <b-form-input
               id="surname"
@@ -185,8 +185,15 @@ export default {
         paypalEmail: "",
         bitcoinAdress: ""
       },
-      payMethodOptions: ["Visa", "Paypal", "Bitcoin", "Faktura"]
+      payMethodOptions: ["Visa", "Paypal", "Bitcoin", "Faktura"],
+      submitted: false
     };
+  },
+  methods: {
+    onSubmit() {
+      this.submitted = true;
+      alert("Din produkt är skickad");
+    }
   }
 };
 </script>
